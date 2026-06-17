@@ -60,6 +60,17 @@
     .word .say{font-family:monospace;font-size:14px;color:var(--muted);margin-bottom:10px;}
     .qbox{background:#EAF2FB;border:1px solid #CBDCEF;border-left:4px solid var(--cobalt);border-radius:12px;padding:18px 22px;margin:18px 26px;font-size:16px;}
     .qbox .qlabel{font-family:'Fraunces',serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--cobalt);margin:0 0 6px;}
+    .events{padding:4px 26px 0;}
+    .event{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px dotted var(--border);}
+    .event:last-child{border-bottom:0;}
+    .cal{flex-shrink:0;width:52px;border:1px solid var(--border);border-radius:8px;overflow:hidden;text-align:center;background:#fff;}
+    .cal .m{background:var(--orange);color:#fff;font-family:'Fraunces',serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;padding:2px 0;}
+    .cal .d{font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--navy);padding:3px 0;line-height:1;}
+    .event .ev{flex:1;font-size:16px;}
+    .pill{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;padding:1px 9px;border-radius:999px;margin-left:4px;white-space:nowrap;}
+    .pill.soon{background:rgba(31,122,61,0.12);color:#1F7A3D;border:1px solid rgba(31,122,61,0.45);}
+    .pill.tent{background:rgba(11,76,154,0.10);color:var(--cobalt);border:1px solid rgba(11,76,154,0.4);}
+    .pill.idea{background:rgba(107,118,134,0.14);color:var(--muted);border:1px solid rgba(107,118,134,0.4);}
     .parting{padding:8px 26px 0;}
     .parting img{display:block;width:100%;border-radius:10px;border:1px solid var(--border);}
     .parting .pcap{font-size:15px;font-style:italic;color:var(--ink);margin:10px 0 2px;}
@@ -172,6 +183,23 @@
       <div class="w">lekker</div>
       <div class="say">say it: LEK-ker</div>
       <div style="font-size:15px;">After gezellig, this is the word you will reach for most. It means tasty, but it means so much more than that. A herring is lekker. A warm afternoon is lekker. A good sleep is lekker. A handsome man, heaven help us, is lekker. Learn this one word and you can pay a compliment to almost anything in the country.</div>
+    </div>
+
+    <div class="seclabel"><img src="brand/tulp/tulp-excited.jpg" alt=""><span>On the family calendar</span></div>
+    <p class="pad" style="font-size:16px;">And before I let you go, a glance at what is coming for this little family of ours.</p>
+    <div class="events">
+      <div class="event">
+        <div class="cal"><div class="m">Jul</div><div class="d">13</div></div>
+        <div class="ev">Jan and Bill fly to the Hague to be with Alec, Irena, and little Amellia, two or three lovely weeks of it. <span class="pill soon">Coming soon</span></div>
+      </div>
+      <div class="event">
+        <div class="cal"><div class="m">Oct</div><div class="d">~</div></div>
+        <div class="ev">Matt comes over for a visit of his own. <span class="pill tent">Tentative</span></div>
+      </div>
+      <div class="event">
+        <div class="cal"><div class="m">Dec</div><div class="d">25</div></div>
+        <div class="ev">Christmas all together at Jan and Bill's in Atlanta, with a first proper sort through the basement for the big move. <span class="pill idea">Idea</span></div>
+      </div>
     </div>
 
     <div class="qbox">
