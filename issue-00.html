@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Going Dutch with the Gelgotas, Issue #0</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap');
+    :root{ --navy:#0A2350; --orange:#E45A2A; --cobalt:#0B4C9A; --bg:#FAF7F1; --ink:#20303F; --muted:#6B7686; --border:#DCE3EC; --tint:#EEF2F8; --link:#BC4A1E; }
+    *{box-sizing:border-box;} body{margin:0;background:#EDEAE2;font-family:'Newsreader',Georgia,serif;color:var(--ink);font-size:17px;line-height:1.65;}
+    .wrap{max-width:640px;margin:0 auto;background:var(--bg);}
+    .pad{padding:0 26px;}
+    a{color:var(--link);font-weight:600;text-decoration:none;} a:hover{text-decoration:underline;}
+    h1,h2,h3,.fr{font-family:'Fraunces',Georgia,serif;}
+    img{max-width:100%;}
+    .header img{display:block;width:100%;}
+    .flag{height:9px;display:flex;}
+    .flag i{flex:1;} .flag .r{background:#AE1C28;} .flag .w{background:#fff;} .flag .b{background:#21468B;}
+    .submast{text-align:center;padding:14px 26px;border-bottom:2px solid var(--orange);}
+    .submast .tag{font-style:italic;color:var(--muted);font-size:15px;}
+    .submast .meta{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--orange);margin-top:6px;}
+    .count{display:flex;gap:16px;align-items:center;background:var(--tint);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin:18px 26px;}
+    .count .n{font-family:'Fraunces',serif;font-size:54px;font-weight:600;color:var(--orange);line-height:1;}
+    .count .n small{display:block;font-family:'Newsreader',serif;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-top:4px;}
+    .count .t strong{color:var(--navy);}
+    .greet{display:flex;gap:18px;align-items:flex-start;padding:14px 26px;}
+    .greet img{width:150px;height:150px;border-radius:50%;border:3px solid var(--orange);object-fit:cover;flex-shrink:0;box-shadow:0 4px 12px rgba(20,20,19,.10);}
+    .greet .from{font-family:'Fraunces',serif;color:var(--orange);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin:0 0 6px;}
+    .seclabel{display:flex;align-items:center;gap:14px;border-top:1px solid var(--border);padding:24px 26px 6px;}
+    .seclabel img{width:80px;height:80px;border-radius:50%;border:3px solid var(--cobalt);object-fit:cover;}
+    .seclabel span{font-family:'Fraunces',serif;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--orange);}
+    .story img.hero{display:block;width:100%;border-radius:10px;border:1px solid var(--border);}
+    .cred{font-size:11px;color:var(--muted);margin:5px 0 10px;}
+    h2{color:var(--navy);font-size:25px;font-weight:600;margin:8px 0;}
+    .hit{display:flex;gap:16px;padding:14px 0;border-bottom:1px dotted var(--border);}
+    .hit:last-child{border-bottom:0;}
+    .hit .th{width:160px;flex-shrink:0;}
+    .hit .th img{width:160px;height:108px;object-fit:cover;border-radius:6px;border:1px solid var(--border);display:block;}
+    .hit h3{color:var(--navy);font-size:20px;font-weight:600;margin:0 0 6px;}
+    .hit p{margin:0 0 8px;font-size:16px;}
+    .lang{background:var(--tint);border-left:3px solid var(--orange);border-radius:5px;padding:8px 12px;margin:8px 0;font-size:15px;}
+    .lang b{color:var(--orange);}
+    .feeds{display:flex;gap:16px;flex-wrap:wrap;padding:8px 26px;}
+    .feed{flex:1 1 240px;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#fff;}
+    .feed img{width:100%;height:240px;object-fit:cover;object-position:top;display:block;}
+    .feed .cap{padding:12px;font-size:14px;} .feed .cap b{color:var(--orange);}
+    .word{background:var(--tint);border:1px solid var(--border);border-left:4px solid var(--orange);border-radius:12px;padding:22px;text-align:center;margin:18px 26px;}
+    .word .wl{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--orange);font-weight:600;}
+    .word .w{font-family:'Fraunces',serif;font-size:42px;font-weight:600;color:var(--navy);margin:6px 0 2px;}
+    .word .say{font-family:monospace;font-size:14px;color:var(--muted);margin-bottom:10px;}
+    .sign{border-top:1px solid var(--border);padding:14px 26px 28px;}
+    .sign .sig{display:flex;align-items:center;gap:14px;margin-top:10px;}
+    .sign .sig img{width:72px;height:72px;border-radius:50%;border:3px solid var(--orange);object-fit:cover;}
+    .sign .sig span{font-family:'Fraunces',serif;font-size:26px;color:var(--orange);font-weight:600;font-style:italic;}
+    .foot{font-size:11px;color:var(--muted);padding:14px 26px 26px;border-top:1px solid var(--border);}
+    @media(max-width:560px){ .greet{flex-direction:column;align-items:center;text-align:center;} .hit{flex-direction:column;} .hit .th,.hit .th img{width:100%;} .hit .th img{height:190px;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header"><img src="brand/header.jpg" alt="Going Dutch with the Gelgotas"></div>
+    <div class="flag"><i class="r"></i><i class="w"></i><i class="b"></i></div>
+    <div class="submast">
+      <div class="tag">Your weekly letter from Tulp de Gid, your guide to the Netherlands</div>
+      <div class="meta">Issue #0 Pilot &nbsp;&middot;&nbsp; Friday, 12 June 2026</div>
+    </div>
+
+    <div class="count">
+      <div class="n">39<small>weeks to go</small></div>
+      <div class="t">until you are here with me, my dears. We are counting down to <strong>15 March 2027</strong>, little <strong>Amellia's third birthday</strong>. An arbitrary day, you say? Perhaps. But I think it is a lovely one to begin a new life on, and I will have the coffee ready.</div>
+    </div>
+
+    <div class="greet">
+      <img src="brand/tulp/tulp-default.jpg" alt="Tulp de Gid">
+      <div>
+        <p class="from">A letter from Tulp de Gid 🌷</p>
+        <p style="margin:0;">Lieve Gelgotas, welcome, welcome. I am Tulp de Gid, and I will be your guide to this small, soggy, wonderful country you are about to call home. Every week I will write you a little letter with the news, a bit of gossip, and the words you will need, so that when you step off the plane you already feel like one of us. Pour yourself a coffee (we drink an alarming amount of it) and sit with me. Here is what your new country is talking about this week.</p>
+      </div>
+    </div>
+
+    <div class="seclabel"><img src="brand/tulp/tulp-excited.jpg" alt=""><span>The big story</span></div>
+    <div class="story pad">
+      <img class="hero" src="issue-00/worldcup.jpg" alt="">
+      <div class="cred">Photo: BBC Sport</div>
+      <h2>Oh my dears, the whole country has turned orange</h2>
+      <p>You have chosen quite a month to start watching us. The football World Cup has begun, and this year it is being played right on your side of the ocean, in the United States, Canada and Mexico. You must understand: we are completely, hopelessly mad for football, and our national team is called the Oranje, which simply means "the orange," after the colour we all wear. For the next month you will see whole towns dressed in orange, orange flags from the windows, even orange cakes in the bakery.</p>
+      <p>Our boys play their first match this Sunday, the 14th of June, against Japan, in Dallas of all places. We are the great heartbreakers of football: three times we have reached the final (in 1974, 1978 and 2010) and three times we have come home crying. We call our own team "the nearly men," and we adore them anyway. Put on something orange on Sunday and shout along with us.</p>
+      <div class="lang"><b>🌷 Tulp's lesson:</b> when you cheer, you shout <i>Hup Holland Hup</i>, which is "Come on, Holland." And the team is always <i>de Oranje</i>, the orange.</div>
+      <p><a href="https://www.bbc.co.uk/sport/football/articles/c8xwn57nz27o">Read more: the BBC guide to our team →</a></p>
+    </div>
+
+    <div class="seclabel"><img src="brand/tulp/tulp-deadpan.jpg" alt=""><span>A few quick things, told quickly</span></div>
+    <div class="pad">
+      <div class="hit"><div class="th"><img src="issue-00/jetten.jpg" alt=""><div class="cred">Photo: BBC</div></div><div><h3>We have a brand-new prime minister, and a young one</h3><p>His name is Rob Jetten, and he is only 38, the youngest leader we have ever had, and the first who is openly gay. He won a surprise election last autumn against a famous man of the hard right, which had us all talking at the kitchen table for weeks.</p><p style="margin:0;"><a href="https://www.bbc.com/news/articles/clygj3421pqo">Read more: meet our new PM →</a></p></div></div>
+      <div class="hit"><div class="th"><img src="issue-00/housing.jpg" alt=""><div class="cred">Photo: The Guardian</div></div><div><h3>Now, a hard truth: finding a house is murder</h3><p>I will not sugar it for you, lieverds. We are short something like 410,000 homes, and the prices climb and climb. It will be your very first job once you decide to come.</p><div class="lang"><b>🌷 Tulp's lesson:</b> the word you will live by is <i>huurwoning</i>, a rental home, the thing the whole country is hunting for.</div><p style="margin:0;"><a href="https://www.theguardian.com/society/2026/mar/23/former-top-military-officer-elanor-boekholt-osullivan-mission-fix-dutch-housing-crisis">Read more: the woman they hired to fix it →</a></p></div></div>
+      <div class="hit"><div class="th"><img src="issue-00/ye.jpg" alt=""><div class="cred">Photo: DutchNews.nl</div></div><div><h3>A great fuss about that American rapper</h3><p>Ye, the one who used to be called Kanye West, is booked to play two concerts here this summer. After the terrible antisemitic things he has said, our government looked into banning him and decided it simply cannot, so a Jewish organisation has taken it to court. We are a tolerant people, but tolerance has its edges.</p><p style="margin:0;"><a href="https://www.dutchnews.nl/2026/06/government-says-it-cannot-stop-ye-concerts-cjo-goes-to-court/">Read more: the court fight →</a></p></div></div>
+      <div class="hit"><div class="th"><img src="issue-00/nitrogen.jpg" alt=""><div class="cred">Photo: The Guardian</div></div><div><h3>One silly little word that runs half our news</h3><p>Do not laugh when you hear it: nitrogen. Because so much of our land sits below the sea and is packed with farms, a long court fight over nitrogen has frozen half the building in the country and sent the farmers onto the motorways with their tractors.</p><div class="lang"><b>🌷 Tulp's lesson:</b> the word is <i>stikstof</i>, nitrogen. Say it with a heavy sigh and any Dutch person will sigh right back.</div><p style="margin:0;"><a href="https://www.theguardian.com/environment/2023/nov/16/nitrogen-wars-the-dutch-farmers-revolt-that-turned-a-nation-upside-down">Read more: the nitrogen wars explained →</a></p></div></div>
+      <div class="hit"><div class="th"><img src="issue-00/royals.jpg" alt=""><div class="cred">Photo: Town &amp; Country</div></div><div><h3>A sweet day for our king, and one frightening one</h3><p>Our king, Willem-Alexander, has just turned 59. His birthday is a national holiday where the whole country dresses in orange and sells its old junk in the street. The frightening part: the police recently caught a man they say was plotting against the two young princesses.</p><div class="lang"><b>🌷 Tulp's lesson:</b> mark it now, <i>Koningsdag</i>, King's Day, every 27 April. Wear orange or be the only soul who isn't.</div><p style="margin:0;"><a href="https://people.com/dutch-royals-celebrate-kings-day-dokkum-photos-11959102">Read more: King's Day in pictures →</a></p></div></div>
+    </div>
+
+    <div class="seclabel"><img src="brand/tulp/tulp-skeptical.jpg" alt=""><span>What the young people are watching</span></div>
+    <p class="pad" style="font-size:16px;">You should know where an old woman like me steals half her news. These clever ones on the little phone screens explain our country to newcomers like you, and rather well.</p>
+    <div class="feeds">
+      <div class="feed"><img src="issue-00/tiktok_dailylife.jpg" alt=""><div class="cap"><b>@dutchbreakingnews</b> walks you through the month's new rules, and the news that our population has suddenly stopped growing so fast. <a href="https://www.tiktok.com/@dutchbreakingnews/video/7645292988431650080">Watch →</a></div></div>
+      <div class="feed"><img src="issue-00/tiktok_chips.jpg" alt=""><div class="cap"><b>@geohussar</b> on why mighty China is cross with tiny us: a Dutch company quietly builds the machines that make the world's finest computer chips. <a href="https://www.tiktok.com/@geohussar/video/7647022606654262541">Watch →</a></div></div>
+    </div>
+
+    <div class="seclabel"><img src="brand/tulp/tulp-triumphant.jpg" alt=""><span>My little pick for the week</span></div>
+    <div class="story pad">
+      <img class="hero" src="issue-00/pinkpop.jpg" alt="">
+      <div class="cred">Photo: Pinkpop / NME</div>
+      <p style="font-size:16px;">If you want a taste of our summer, look up <strong>Pinkpop</strong>, one of the oldest music festivals in the world, happening next weekend down in the south. This year the Foo Fighters, The Cure and Twenty One Pilots are headlining. Put a few of those bands on this weekend and you are practically here with me already.</p>
+      <p><a href="https://www.nme.com/news/music/pinkpop-2026-line-up-announced-with-the-cure-foo-fighters-twenty-one-pilots-and-loads-more-3911697">Read more: the full Pinkpop lineup →</a></p>
+    </div>
+
+    <div class="word">
+      <div class="wl">🌷 a gift from Tulp</div>
+      <div class="w">gezellig</div>
+      <div class="say">say it: kheh-ZELL-ikh</div>
+      <div style="font-size:15px;">The most Dutch word there is, and it barely translates. It means cosy, warm, convivial, the good feeling of being together with people you love. A candlelit supper is gezellig. A crowded little cafe is gezellig. Learn this one word and you will understand half of who we are.</div>
+    </div>
+
+    <div class="sign">
+      <p style="font-size:16px;">That is all for this first letter. When you arrive I will tell you the rest in person, over the coffee. Until then, write back and tell me what you would like more of: the funny things, the food, the everyday, or the big news.</p>
+      <p style="font-size:16px;"><i>Tot ziens</i>, my dears (that is our "see you soon"). Wear orange on Sunday.</p>
+      <div class="sig"><img src="brand/tulp/tulp-default.jpg" alt=""><span>Liefs, Tulp 🌷</span></div>
+    </div>
+    <div class="foot">Going Dutch with the Gelgotas &middot; a weekly letter from Tulp de Gid &middot; pilot issue, 12 June 2026</div>
+  </div>
+</body>
+</html>
