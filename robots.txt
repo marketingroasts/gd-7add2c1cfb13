@@ -1,2 +1,5 @@
+# Unlisted, not blocked: indexing is prevented by the per-page noindex meta
+# and the unguessable URL. Fetching is allowed so link previews (Signal,
+# iMessage, etc.) can read the Open Graph tags.
 User-agent: *
-Disallow: /
+Disallow:
